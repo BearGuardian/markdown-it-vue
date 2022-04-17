@@ -16,7 +16,6 @@
 
 <script>
 import MarkdownIt from 'markdown-it'
-import MarkdownItEmoji from 'markdown-it-emoji'
 import MarkdownItSubscript from 'markdown-it-sub'
 import MarkdownItSuperscript from 'markdown-it-sup'
 import MarkdownItFootnote from 'markdown-it-footnote'
@@ -40,7 +39,7 @@ import MarkdownItImage from './markdown-it-image'
 import 'github-markdown-css'
 import 'markdown-it-latex/dist/index.css'
 
-import * as echarts from 'echarts/dist/echarts.simple.min'
+import echarts from 'echarts'
 import mermaid from 'mermaid'
 import flowchart from 'flowchart.js'
 import ImageViewer from './markdown-it-image/image-viewer.vue'
@@ -148,7 +147,6 @@ export default {
     optImage.urlSet = new Set()
 
     let md = new MarkdownIt(optMarkdownIt)
-      .use(MarkdownItEmoji)
       .use(MarkdownItSubscript)
       .use(MarkdownItSuperscript)
       .use(MarkdownItFootnote)

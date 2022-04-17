@@ -1,3 +1,3 @@
 export * from './markdown-it-vue'
-import { MarkdownItVue } from './markdown-it-vue'
-export default MarkdownItVue
+import { MarkdownItVueDiy } from './markdown-it-vue'
+export default MarkdownItVueDiy

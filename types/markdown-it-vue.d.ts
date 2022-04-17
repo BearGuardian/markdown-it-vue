@@ -231,7 +231,7 @@ export interface MarkdownItVueOptions {
   image: ImageOptions
 }
 
-export class MarkdownItVue extends Vue {
+export class MarkdownItVueDiy extends Vue {
   /** Install component into Vue */
   static install(vue: typeof Vue): void
   /** markdown plain text */
@@ -240,4 +240,4 @@ export class MarkdownItVue extends Vue {
   options: MarkdownItVueOptions
 }
 
-export class MarkdownItVueLight extends MarkdownItVue { }
+export class MarkdownItVueLight extends MarkdownItVueDiy { }

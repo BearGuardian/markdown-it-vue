@@ -34,12 +34,11 @@ import MarkdownItEcharts from './markdown-it-plugin-echarts'
 import MarkdownItMermaid from './markdown-it-plugin-mermaid'
 import MarkdownItFlowchart from './markdown-it-plugin-flowchart'
 import MarkdownItHighlight from './markdown-it-highlight'
-import MarkdownItFontAwsome from './markdown-it-font-awsome'
 import MarkdownItImage from './markdown-it-image'
 import 'github-markdown-css'
 import 'markdown-it-latex/dist/index.css'
 
-import echarts from 'echarts'
+import * as echarts from 'echarts/dist/echarts'
 import mermaid from 'mermaid'
 import flowchart from 'flowchart.js'
 import ImageViewer from './markdown-it-image/image-viewer.vue'
@@ -163,7 +162,6 @@ export default {
       .use(MarkdownItLinkAttributes, linkAttributes)
       .use(MarkdownItKatex, optKatex)
       .use(MarkdownItTasklists, optTasklists)
-      .use(MarkdownItFontAwsome)
       .use(MarkdownItGithubToc, optGithubToc)
       .use(MarkdownItImage, optImage)
       .use(MarkdownItContainer, 'warning', {

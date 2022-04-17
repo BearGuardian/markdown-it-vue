@@ -1,11 +1,11 @@
 {
   "name": "markdown-it-vue-diy",
-  "version": "1.1.8",
+  "version": "1.0.3",
   "private": false,
-  "description": "The vue lib for markdown-it",
+  "description": "The project is fork from https://github.com/ravenq/markdown-it-vue, modify by work need",
   "author": {
-    "name": "ravenq",
-    "e-mail": "flw_dream@126.com"
+    "name": "suyz",
+    "e-mail": "763938645@qq.com"
   },
   "keywords": [
     "markdown",
@@ -29,18 +29,16 @@
     "build:lib": "node --max_old_space_size=8192 node_modules/@vue/cli-service/bin/vue-cli-service.js build --target lib ./src/index.js",
     "build:light": "node --max_old_space_size=8192 node_modules/@vue/cli-service/bin/vue-cli-service.js build --target lib --name markdown-it-vue-light --no-clean ./src/index-light.js"
   },
-  "main": "dist/markdown-it-vue.umd.min.js",
+  "main": "dist/markdown-it-vue-diy.umd.min.js",
   "dependencies": {
     "echarts": "^5.1.0",
     "flowchart.js": "^1.15.0",
-    "font-awesome-icon-chars": "^2.6.0",
     "github-markdown-css": "^4.0.0",
     "highlight.js": "^10.7.2",
     "markdown-it": "^12.0.6",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-container": "^3.0.0",
     "markdown-it-deflist": "^2.1.0",
-    "markdown-it-emoji": "^2.0.0",
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-github-toc": "^3.2.4",
     "markdown-it-ins": "^3.0.1",
@@ -92,12 +90,12 @@
     "not ie <= 8"
   ],
   "bugs": {
-    "url": "https://github.com/ravenq/markdown-it-vueissues"
+    "url": "https://github.com/syz951127/markdown-it-vueissues"
   },
-  "homepage": "https://github.com/ravenq/markdown-it-vue",
+  "homepage": "https://github.com/syz951127/markdown-it-vue",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ravenq/markdown-it-vue.git"
+    "url": "git+https://github.com/syz951127/markdown-it-vue"
   }
 }

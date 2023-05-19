@@ -103,6 +103,9 @@ export default {
           // render echarts
           document.querySelectorAll('.md-echarts').forEach(element => {
             try {
+              if (!element.textContent) {
+                return
+              }
               let options = JSON.parse(element.textContent)
               let chart = echarts.init(element)
               chart.setOption(options)

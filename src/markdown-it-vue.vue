@@ -110,7 +110,9 @@ export default {
               let chart = echarts.init(element)
               chart.setOption(options)
             } catch (e) {
-              element.outerHTML = `<pre>echarts complains: ${e}</pre>`
+              if (!element.outerHTML) {
+                element.outerHTML = `<pre>echarts complains: ${e}</pre>`
+              }
             }
           })
           // render mermaid

@@ -220,4 +220,24 @@ para(path2, right)->op2->e
 st@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})
 \`\`\`
 
+\`\`\`python 
+# -*- coding: UTF-8 -*- 
+# 功能说明: 这段代码是一个自定义的StackStorm动作，它是一个演示动作，接收一些输入参数并进行一些处理，然后返回结果。 
+# 创建者: suyz2 
+# 创建时间: 2021/12/24 
+# 修改历史:  
+import time 
+from st2common.runners.base_action import Action 
+ 
+class Demo(Action): 
+    def run(self, **kwargs): 
+        # 通过time.sleep()函数来模拟执行时间 
+        time.sleep(kwargs.get('sleep_seconds', 1)) 
+        if kwargs.get('input') == 'error': 
+            return False, kwargs 
+        # 打印输入参数 
+        print(kwargs) 
+        # 返回处理后的结果 
+        return True,{'input': kwargs.get('input'),'msg':'哈ssss哈哈哈信息13333'} 
+\`\`\`
 `

@@ -31,16 +31,16 @@ import MarkdownItGithubToc from 'markdown-it-github-toc'
 import MarkdownItSourceMap from 'markdown-it-source-map'
 import MarkdownItLinkAttributes from './markdown-it-link-attributes'
 import MarkdownItEcharts from './markdown-it-plugin-echarts'
-import MarkdownItMermaid from './markdown-it-plugin-mermaid'
-import MarkdownItFlowchart from './markdown-it-plugin-flowchart'
+// import MarkdownItMermaid from './markdown-it-plugin-mermaid'
+// import MarkdownItFlowchart from './markdown-it-plugin-flowchart'
 import MarkdownItHighlight from './markdown-it-highlight'
 import MarkdownItImage from './markdown-it-image'
 import 'github-markdown-css'
 import 'markdown-it-latex/dist/index.css'
 
 import * as echarts from 'echarts/dist/echarts'
-import mermaid from 'mermaid'
-import flowchart from 'flowchart.js'
+// import mermaid from 'mermaid'
+// import flowchart from 'flowchart.js'
 import ImageViewer from './markdown-it-image/image-viewer.vue'
 
 const DEFAULT_OPTIONS_LINK_ATTRIBUTES = {
@@ -60,9 +60,9 @@ const DEFAULT_OPTIONS_GITHUBTOC = {
   anchorClassName: 'anchor',
   anchorLinkSymbolClassName: 'octicon octicon-link'
 }
-const DEFAULT_OPTIONS_MERMAID = {
-  theme: 'default'
-}
+// const DEFAULT_OPTIONS_MERMAID = {
+//   theme: 'default'
+// }
 const DEFAULT_OPTIONS_IMAGE = {
   hAlign: 'left',
   viewer: true
@@ -85,8 +85,8 @@ export default {
           linkAttributes: DEFAULT_OPTIONS_LINK_ATTRIBUTES,
           katex: DEFAULT_OPTIONS_KATEX,
           tasklists: DEFAULT_OPTIONS_TASKLISTS,
-          githubToc: DEFAULT_OPTIONS_GITHUBTOC,
-          mermaid: DEFAULT_OPTIONS_MERMAID
+          githubToc: DEFAULT_OPTIONS_GITHUBTOC
+          // mermaid: DEFAULT_OPTIONS_MERMAID
         }
       }
     }
@@ -116,18 +116,18 @@ export default {
             }
           })
           // render mermaid
-          mermaid.init(undefined, document.querySelectorAll('.mermaid'))
+          // mermaid.init(undefined, document.querySelectorAll('.mermaid'))
           // render flowchart
-          document.querySelectorAll('.md-flowchart').forEach(element => {
-            try {
-              let code = element.textContent
-              let chart = flowchart.parse(code)
-              element.textContent = ''
-              chart.drawSVG(element)
-            } catch (e) {
-              element.outerHTML = `<pre>flowchart complains: ${e}</pre>`
-            }
-          })
+          // document.querySelectorAll('.md-flowchart').forEach(element => {
+          //   try {
+          //     let code = element.textContent
+          //     let chart = flowchart.parse(code)
+          //     element.textContent = ''
+          //     chart.drawSVG(element)
+          //   } catch (e) {
+          //     element.outerHTML = `<pre>flowchart complains: ${e}</pre>`
+          //   }
+          // })
 
           let list = []
           for (const i of this.urlSet) {
@@ -146,7 +146,7 @@ export default {
     const optKatex = this.options.katex || DEFAULT_OPTIONS_KATEX
     const optTasklists = this.options.tasklists || DEFAULT_OPTIONS_TASKLISTS
     const optGithubToc = this.options.githubToc || DEFAULT_OPTIONS_GITHUBTOC
-    const optMermaid = this.options.mermaid || DEFAULT_OPTIONS_MERMAID
+    // const optMermaid = this.options.mermaid || DEFAULT_OPTIONS_MERMAID
     const optImage = this.options.image || DEFAULT_OPTIONS_IMAGE
     optImage.urlSet = new Set()
 
@@ -161,9 +161,9 @@ export default {
       .use(MarkdownItHighlight)
       .use(MarkdownItLatex)
       .use(MarkdownItSourceMap)
-      .use(MarkdownItMermaid, optMermaid)
+      // .use(MarkdownItMermaid, optMermaid)
       .use(MarkdownItEcharts)
-      .use(MarkdownItFlowchart)
+      // .use(MarkdownItFlowchart)
       .use(MarkdownItLinkAttributes, linkAttributes)
       .use(MarkdownItKatex, optKatex)
       .use(MarkdownItTasklists, optTasklists)

@@ -1,17 +1,21 @@
 <template>
   <div class="container">
     <textarea class="md-text" rows="10" v-model="content"/>
-    <markdown-it-vue 
-      class="md-body" 
-      :content="content" 
-      :options="options" 
-      @render-complete=hdlCmplete 
+    <markdown-it-vue
+      class="md-body"
+      :content="content"
+      :options="options"
+      @content-click="handleClick"
+      @copy-code="handleCopyCode"
+      @render-complete=hdlCmplete
     />
   </div>
 </template>
 
 <script>
 import MarkdownText from './example'
+// import MarkdownText from './testJs'
+
 import MarkdownItVue from '../../src'
 export default {
   components: {
@@ -34,6 +38,12 @@ export default {
     }
   },
   methods: {
+    handleCopyCode (e) {
+      console.log(e);
+    },
+    handleClick (e) {
+      console.log(e);
+    },
     hdlCmplete() {
       console.log('reder complete')
     }

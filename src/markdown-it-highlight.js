@@ -108,8 +108,7 @@ const highlightPlugin = md => {
     } else {
       cnt = hljs.highlightAuto(code).value
     }
-    
-    return `<pre class="hljs"><code>${cnt}</code></pre>`
+    return `<pre class="hljs"><div style="position: relative;margin-bottom: 16px;"><button class="copy-code-button" data-code="${encodeURIComponent(code)}"style="position: sticky;top: 0;right: 0;padding: 4px 8px;font-size: 12px;cursor: pointer;background-color: #f5f5f5; border: none;border-bottom-left-radius: 4px;">复制代码</button></div><code>${cnt}</code></pre>`
   }
 }
 

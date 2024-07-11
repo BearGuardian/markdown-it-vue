@@ -242,6 +242,11 @@ export default {
         this.index = this.urlList.indexOf(e.target.src) || 0
         this.showViewer = true
       }
+      if (e.target.classList.contains('copy-code-button')) {
+        const code = decodeURIComponent(event.target.getAttribute('data-code'))
+        this.$emit('copy-code', code)
+      }
+      this.$emit('content-click', e)
     },
     closeViewer() {
       this.showViewer = false

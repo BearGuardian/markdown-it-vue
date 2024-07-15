@@ -6,9 +6,9 @@ export default (md) => {
       const code = token.content.trim()
       try {
         const json = JSON.parse(code)
-        // const width = json.width || 500
+        const width = json.width ? `${json.width}px` : '70vw'
         const height = json.height || 400
-        return `<div style="width:100%;height:${height}px" class="md-echarts">${JSON.stringify(json)}</div>`
+        return `<div style="width:${width};height:${height}px" class="md-echarts">${JSON.stringify(json)}</div>`
       } catch (e) { // JSON.parse exception
         return `<pre>${e}</pre>`
       }
